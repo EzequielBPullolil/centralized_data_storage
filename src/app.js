@@ -1,7 +1,9 @@
 const express = require('express');
-const app = express();
+const fileUpload = require('express-fileupload')
+const app = express()
 
 //app configs
+app.use(fileUpload())
 //domain imports 
 
 //app imports 
