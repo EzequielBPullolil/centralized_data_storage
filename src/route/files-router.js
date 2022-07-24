@@ -3,10 +3,11 @@ const FileRouter = Router();
 
 FileRouter.route('/')
     .get((req, res) => {
-        return res.status(200).json('file router services on')
+        return res.status(200).json('File router services on')
     })
     .post((req,res)=>{
-        return res.status(201).json('file saved')
+        const fileToSave = req.files.file;
+        return res.status(201).json(`The file "${fileToSave.name}" was saved.`)
     })
 
 
