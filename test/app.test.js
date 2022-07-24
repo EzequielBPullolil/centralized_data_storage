@@ -12,8 +12,6 @@ describe('App test', () => {
             .get('/')
             .end((err,res)=>{
                 if(err) done(err);
-
-
                 expect(res).to.have.status(200);
                 done();
             });
