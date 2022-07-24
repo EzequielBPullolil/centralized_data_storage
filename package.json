@@ -6,6 +6,9 @@
   "repository": "https://github.com/EzequielK-source/centralized_data_storage",
   "author": "Ezequiel Karottupullolil",
   "license": "UNLICENCED",
+  "scripts": {
+    "test": "export NODE_PATH='.' && export NODE_ENV='testing' && mocha 'test/**/*.test.js' --exit"
+  },
   "dependencies": {
     "express": "^4.18.1"
   },
