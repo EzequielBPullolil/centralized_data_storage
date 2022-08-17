@@ -20,5 +20,5 @@ module.exports = (fileBuffer, userUUID)=>{
     const userFolderPath = path.join(absolutePathToStorageFolder, userUUID);
     const monthYearFolderPath = path.join(userFolderPath, actualMonthYear)
     if(!fs.existsSync(userFolderPath)) createUserFolder(userUUID)
-    if(!fs.existsSync(monthYearFolderPath))  createMonthYearFolder();
+    if(!fs.existsSync(monthYearFolderPath))  createMonthYearFolder(userUUID);
 }
