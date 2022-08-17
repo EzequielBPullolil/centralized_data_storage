@@ -4,7 +4,7 @@ const fs = require('fs')
     ,moment = require('moment');
 
 const createUserFolder = require('src/services/create-user-folder');
-const createMonthYearFolder = requirie('src/services/create-month-year-folder')
+const createMonthYearFolder = require('src/services/create-month-year-folder')
 module.exports = (fileBuffer, userUUID)=>{
 
     /**
@@ -16,6 +16,7 @@ module.exports = (fileBuffer, userUUID)=>{
      * 
      * if the user/month-year folder not exist create it
      */
+    const actualMonthYear = moment().format('MM-YYYY')
     const absolutePathToStorageFolder = path.resolve(storage_folder);
     const userFolderPath = path.join(absolutePathToStorageFolder, userUUID);
     const monthYearFolderPath = path.join(userFolderPath, actualMonthYear)
