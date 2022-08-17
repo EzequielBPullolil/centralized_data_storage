@@ -1,0 +1,5 @@
+{
+    "centralized_data_storage":{
+        "storage_folder":"test/storage_folder"
+    }
+}
