@@ -7,7 +7,7 @@ app.use(fileUpload())
 //domain imports 
 
 //app imports 
-const FilesRouter = require('src/route/files-router')
+const FilesRouter = require('src/domain/file_storage/router')
 app.get('/',(req,res)=>{
     return res.sendStatus(200)
 })

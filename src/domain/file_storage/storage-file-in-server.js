@@ -3,8 +3,8 @@ const fs = require('fs')
     ,path = require('path')
     ,moment = require('moment');
 
-const createUserFolder = require('src/services/create-user-folder');
-const createMonthYearFolder = require('src/services/create-month-year-folder');
+const createUserFolder = require('./create-user-folder');
+const createMonthYearFolder = require('./create-month-year-folder');
 module.exports = (fileToStorage, userUUID)=>{
 
     /**

@@ -6,7 +6,7 @@ const config = require('config')
 const {expect} = chai
 
 
-const StorageFileInServer = require('src/services/storage-file-in-server')
+const StorageFileInServer = require('src/domain/file_storage/storage-file-in-server')
 const {storage_folder} = config.get('centralized_data_storage')
 
 describe('StorageFileInServer test', () => {
