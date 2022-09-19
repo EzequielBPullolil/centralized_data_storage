@@ -5,7 +5,7 @@ const fs = require('fs')
 
 const createUserFolder = require('src/services/create-user-folder');
 const createMonthYearFolder = require('src/services/create-month-year-folder');
-module.exports = (file, userUUID)=>{
+module.exports = (fileToStorage, userUUID)=>{
 
     /**
      * Save the file in the folder of the
@@ -17,16 +17,15 @@ module.exports = (file, userUUID)=>{
      * if the user/month-year folder not exist create it
      */
     const actualMonthYear = moment().format('MM-YYYY')
-    const absolutePathToStorageFolder = path.resolve(storage_folder);
-    const userFolderPath = path.join(absolutePathToStorageFolder, userUUID);
+    const absolutePathToStorageFolder = path.resolve(storage_folder)
+    const userFolderPath = path.join(absolutePathToStorageFolder, userUUID)
     const monthYearFolderPath = path.join(userFolderPath, actualMonthYear)
+
     if(!fs.existsSync(userFolderPath)) createUserFolder(userUUID)
-    if(!fs.existsSync(monthYearFolderPath))  createMonthYearFolder(userUUID);
+    if(!fs.existsSync(monthYearFolderPath))  createMonthYearFolder(userUUID)
 
-    const filePath = path.join(monthYearFolderPath, file.name)
-
-    fs.writeFileSync(filePath, file.data);
+    const filePath = path.join(monthYearFolderPath, fileToStorage.name)
+    fs.writeFileSync(filePath, fileToStorage.data);
 
     return filePath;
-
 }

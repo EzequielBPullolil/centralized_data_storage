@@ -6,10 +6,10 @@ const config = require('config')
 const {expect} = chai
 
 
-const SaveFileInServer = require('src/services/save-file-in-server')
+const StorageFileInServer = require('src/services/storage-file-in-server')
 const {storage_folder} = config.get('centralized_data_storage')
 
-describe('SaveFileInServer test', () => {
+describe('StorageFileInServer test', () => {
     const fileSuject = {
         name: 'aTxtFile.txt',
         data: fs.readFileSync('test/files/aTxtFile.txt',{ encoding: 'utf8' })
@@ -17,7 +17,7 @@ describe('SaveFileInServer test', () => {
     const storageFolderPath = path.resolve(storage_folder)
     const testPath = path.join(storageFolderPath, "aTxtFile.txt")
     it('Correct file save', async() => {
-        const createdFile = await SaveFileInServer(fileSuject, "absds");
+        const createdFile = await StorageFileInServer(fileSuject, "absds");
 
         fs.readFile(createdFile, (err, data)=>{
             if(err) throw err;
